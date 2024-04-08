@@ -4,14 +4,15 @@ import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-import { elem, lightbox, displayToast } from "../main";
+import { elem,hideLoading, lightbox, displayToast ,hideButton , hideButton } from "../main";
 
-export function render(data) {
+export async function render(data) {
   if (data.hits.length === 0) {
+    hideLoading(); 
+    hideButton();
     displayToast("Sorry, there are no images matching your search query. Please try again!");
   }
   else {
-    elem.gallery.innerHTML = '';
     const images = data.hits;
 
     const markup = images.map(image => `<li class="gallery-item">
@@ -27,7 +28,7 @@ export function render(data) {
               </li>`)
       .join('');
     elem.gallery.insertAdjacentHTML('beforeend', markup);
-
+ 
     lightbox.refresh();
   }
 }
