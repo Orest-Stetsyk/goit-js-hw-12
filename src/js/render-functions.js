@@ -31,6 +31,9 @@ export async function render(data) {
     
     lightbox.refresh();
     hideLoading();
-    showButton();
+    if (data.totalHits>15) {
+      showButton();
+    }
+    
   }
 }
