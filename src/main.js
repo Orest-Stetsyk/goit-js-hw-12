@@ -36,7 +36,7 @@ hideButton();
 hideLoading();
 async function submitImageFinder(event){
   event.preventDefault();
-  
+  hideButton()
   showLoading();
   
   
