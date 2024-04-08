@@ -28,7 +28,8 @@ export async function render(data) {
               </li>`)
       .join('');
     elem.gallery.insertAdjacentHTML('beforeend', markup);
-    showButton();
+    
     lightbox.refresh();
+    showButton();
   }
 }
