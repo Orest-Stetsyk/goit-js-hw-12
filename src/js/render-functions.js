@@ -7,7 +7,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import { elem,hideLoading, lightbox, displayToast, showButton } from "../main";
 
 export async function render(data) {
-  if (data.hits.length === 0) {
+  if (data.totalHits.length === 0) {
     hideLoading(); 
     displayToast("Sorry, there are no images matching your search query. Please try again!");
      
