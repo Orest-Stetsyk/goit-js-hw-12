@@ -48,7 +48,7 @@ async function submitImageFinder(event){
     await connectionFrom(word, currentPage)
       .then(data => {
         render(data);
-        hideLoading();
+        
        
       })
       .catch(error => console.log(error));

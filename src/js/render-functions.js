@@ -30,6 +30,7 @@ export async function render(data) {
     elem.gallery.insertAdjacentHTML('beforeend', markup);
     
     lightbox.refresh();
+    hideLoading();
     showButton();
   }
 }
