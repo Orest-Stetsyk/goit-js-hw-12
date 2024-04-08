@@ -49,7 +49,7 @@ async function submitImageFinder(event){
       .then(data => {
         render(data);
         hideLoading();
-        showButton();
+       
       })
       .catch(error => console.log(error));
   }

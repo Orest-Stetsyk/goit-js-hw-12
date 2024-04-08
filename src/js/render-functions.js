@@ -4,13 +4,13 @@ import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-import { elem,hideLoading, lightbox, displayToast, hideButton } from "../main";
+import { elem,hideLoading, lightbox, displayToast, showButton } from "../main";
 
 export async function render(data) {
   if (data.hits.length === 0) {
     hideLoading(); 
     displayToast("Sorry, there are no images matching your search query. Please try again!");
-      hideButton();
+     
   }
   else {
     const images = data.hits;
@@ -28,7 +28,7 @@ export async function render(data) {
               </li>`)
       .join('');
     elem.gallery.insertAdjacentHTML('beforeend', markup);
- 
+    showButton();
     lightbox.refresh();
   }
 }
